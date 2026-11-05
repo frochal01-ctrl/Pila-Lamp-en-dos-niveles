@@ -25,11 +25,12 @@ Vagrant.configure("2") do |config|
     end
 
     mysql.trigger.after :up do |t|
-      t.run = { inline: "VBoxManage controlvm $(cat .vagrant/machines/mysql/virtualbox/id) setlinkstate1 off" }
+      t.run = { inline: "VBoxManage controlvm #{mysql.id} setlinkstate1 off" }
     end
   end
 
 end
+
 
 
 
