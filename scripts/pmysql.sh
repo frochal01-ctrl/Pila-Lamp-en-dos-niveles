@@ -2,8 +2,6 @@
 set -e
 export DEBIAN_FRONTEND=noninteractive
 
-ip route replace default via 10.0.2.2
-
 apt-get update -y
 apt-get install -y mariadb-server git
 
@@ -18,11 +16,7 @@ mysql -e "FLUSH PRIVILEGES;"
 cd /tmp
 rm -rf iaw-practica-lamp
 git clone https://github.com/josejuansanchez/iaw-practica-lamp.git
-if [ -f /tmp/iaw-practica-lamp/db/database.sql ]; then
-    mysql lamp_db < /tmp/iaw-practica-lamp/db/database.sql
-fi
-
-ip route del default || true
+mysql lamp_db < /tmp/iaw-practica-lamp/db/database.sql
 
 
 
