@@ -1,11 +1,4 @@
 
-
-https://github.com/user-attachments/assets/091afd3f-065f-486b-a98c-bd847e154f53
-
-
-
-https://github.com/user-attachments/assets/5e6d5a9e-45af-4bb1-92a2-5f9679f78ce0
-
 # Despliegue de Pila LAMP en Dos Niveles con Vagrant
 
 Este documento técnico detalla la infraestructura y automatización para desplegar una aplicación web PHP con una base de datos centralizada utilizando **Debian 12** y **Vagrant**.
@@ -31,7 +24,7 @@ A continuación se muestra el estado del servicio de base de datos activo en la 
 ### 3. Screencast con la aplicación desplegada
 A continuación se muestra la grabación de pantalla que demuestra el correcto funcionamiento de la aplicación web interactuando con la base de datos:
 
-
+https://github.com/user-attachments/assets/5e6d5a9e-45af-4bb1-92a2-5f9679f78ce0
 
 ---
 
