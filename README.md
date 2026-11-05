@@ -22,10 +22,7 @@ A continuación se muestra el estado del servicio de base de datos activo en la 
 
 ### 3. Screencast con la aplicación desplegada
 A continuación se muestra la grabación de pantalla que demuestra el correcto funcionamiento de la aplicación web interactuando con la base de datos:
-
-<video src="image/aplicacion_desplegada.mp4" controls width="100%">
-  Tu navegador no admite la reproducción de este video. Puedes descargarlo directamente desde la carpeta `image/`.
-</video>
+![Screencast](image/aplicacion_desplegada.mp4)
 
 ---
 
