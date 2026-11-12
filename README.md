@@ -122,9 +122,22 @@ cd /tmp
 # Elimina restos antiguos del repositorio para evitar conflictos de carpetas.
 rm -rf iaw-practica-lamp
 
-# Clona el mismo repositorio GitHub para obtener el archivo de volcado SQL de la base de datos.
+# Clona el repositorio oficial de la práctica para obtener el script de estructura de la base de datos.
 git clone https://github.com/josejuansanchez/iaw-practica-lamp.git
 
-# Importa de manera automatizada las tablas y datos iniciales del archivo 'database.sql' dentro de nuestra base de datos local.
+# Importa las tablas y datos iniciales en la base de datos 'lamp_db'.
 mysql lamp_db < /tmp/iaw-practica-lamp/db/database.sql
+
+# Elimina la ruta por defecto (puerta de enlace) para cortar el acceso a Internet en la sesión actual sin desconectar el SSH de Vagrant.
+ip route del default || true
+
+# Crea un script en el directorio 'if-up.d' para que la ruta por defecto se elimine automáticamente cada vez que se levante la red tras un reinicio.
+cat << 'EOF' > /etc/network/if-up.d/sin-internet
+#!/bin/sh
+ip route del default 2>/dev/null || true
+EOF
+
+# Otorga permisos de ejecución al script para asegurar que el sistema lo aplique en cada arranque.
+chmod +x /etc/network/if-up.d/sin-internet
+
 ```
