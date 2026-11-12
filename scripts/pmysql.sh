@@ -18,6 +18,14 @@ rm -rf iaw-practica-lamp
 git clone https://github.com/josejuansanchez/iaw-practica-lamp.git
 mysql lamp_db < /tmp/iaw-practica-lamp/db/database.sql
 
+ip route del default || true
+
+cat << 'EOF' > /etc/network/if-up.d/sin-internet
+#!/bin/sh
+ip route del default 2>/dev/null || true
+EOF
+chmod +x /etc/network/if-up.d/sin-internet
+
 
 
 
